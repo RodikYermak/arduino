@@ -14,6 +14,8 @@
 // WiFi and server setup
 AsyncWebServer server(80);
 
+static bool serverStarted = false;
+
 void setup()
 {
   Serial.begin(115200);
@@ -30,6 +32,12 @@ void setup()
   wifiManager.setConnectTimeout(10);
   WiFi.setSleep(WIFI_PS_NONE);
   wifiManager.autoConnect();
+
+  // WiFi.softAP("ArduinoRobot", "12345678");
+
+  // IPAddress IP = WiFi.softAPIP();
+  // Serial.print("AP IP address: ");
+  // Serial.println(IP);
 
   Serial.println("\nWiFi connected.");
   Serial.println("IP address: ");
@@ -53,7 +61,7 @@ void setup()
     }
 
     // Send new version otherwise
-    AsyncWebServerResponse *response = request->beginResponse_P(200, "text/html", index_gz, index_gz_len);
+    AsyncWebServerResponse *response = request->beginResponse(200, "text/html", index_gz, index_gz_len);
     response->addHeader("Content-Encoding", "gzip");
     response->addHeader("ETag", index_gz_sha);
 
@@ -118,6 +126,22 @@ void setup()
             {
               Serial.println("Restarting ESP...");
               ESP.restart(); });
+
+  server.on("/resetwifi", HTTP_POST, [](AsyncWebServerRequest *request)
+            {
+              Serial.println("Resetting WiFi settings...");
+              WiFi.disconnect(true, true); // Erase WiFi credentials
+              request->send(200, "text/plain", "WiFi settings erased. Restarting...");
+              delay(1000);
+              ESP.restart(); // Reboot the ESP to apply changes 
+            });
+
+  // 🛡 SAFE SERVER START
+  if (!serverStarted) {
+    server.begin();
+    serverStarted = true;
+    Serial.println("Web server started successfully!");
+  }
 
   server.begin();
 }
