@@ -1,4 +1,4 @@
-#include "Arduino.h" 
+#include "Arduino.h"
 #include "single_eye.h"
 
 //Servo Connection Pins, LeftRightServo - 3, UpDownServo - 5, OpenCloseServo - 6
@@ -12,7 +12,7 @@ void setup() {
    eye.setLeftRightLowerUpperCentre(60,115,90);
    eye.setUpDownLowerUpperCentre(45,120,85);
    eye.setEyeLidOpenClose(75,145);
-  
+
 //  eye.setLeftRightLowerUpperCentre(x,y,z);
 //  eye.setUpDownLowerUpperCentre(a,b,c);
 //  eye.setEyeLidOpenClose(i,j);
@@ -25,7 +25,7 @@ void setup() {
 }
 
 void loop() {
-  
+
   eye.eyeMotion(); //keep this running repeatedly to move the
   someFunction();
 

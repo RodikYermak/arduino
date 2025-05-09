@@ -2,13 +2,13 @@
 
 #ifndef EYE_H
 #define EYE_H
-#include "Arduino.h" 
+#include "Arduino.h"
 #include "ServoEasing.h"
 
 class Eye {
   public:
     // Constructor declaration
-    Eye(int leftRight, int upDown, int eyeLid); 
+    Eye(int leftRight, int upDown, int eyeLid);
 
     void setLeftRightLowerUpperCentre(int lower, int upper, int centre);
     void setUpDownLowerUpperCentre(int lower, int upper, int centre);
@@ -55,7 +55,7 @@ class Eye {
     int eyeLidOpen;
     int eyeLidClose;
 
-    ServoEasing eyeLidServo; 
+    ServoEasing eyeLidServo;
     ServoEasing upDownServo;
     ServoEasing leftRightServo;
 

@@ -48,10 +48,10 @@ void Eye::moveServosTo(int leftRightServoPos, int upDownServoPos, int eyeLidServ
   leftRightServo.setEaseTo(leftRightServoPos,speed);
   upDownServo.setEaseTo(upDownServoPos,speed);
   eyeLidServo.setEaseTo(eyeLidServoPos,speed);
-  
+
   synchronizeAllServosAndStartInterrupt(false);      // Do not start interrupt, because we use updateAllServos() every 20 ms below
     do {
-        delay(20); 
+        delay(20);
     } while (!updateAllServos());
 }
 
