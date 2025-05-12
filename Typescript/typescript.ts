@@ -83,7 +83,6 @@ type EventHandler = `on${EventName}`;
 
 type UserId = `user.id_${string}`;
 
-
 interface User2 {
     username: string;
 }
@@ -92,24 +91,12 @@ interface Article {
     title: string;
 }
 
-interface ApiResponse2<T>{
+interface ApiResponse2<T> {
     status?: 'error' | 'success';
     meta?: MediaMetadata;
     requestId?: string;
     data: T;
 }
 
-// const responseFromUserApi2: ApiResponse<User2> = {
-//     data: {
-//         username: 'Ulbi Tv'
-//     }
-// }
-
-
-
-
-
-
-
-// timestamp: 37:09
+// timestamp: 1:21:34
 // https://www.youtube.com/watch?v=LWtHl__oEWc&ab_channel=UlbiTV
