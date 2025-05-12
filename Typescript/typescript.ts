@@ -71,7 +71,43 @@ type onClick = (event: HTMLElement) => void;
 
 type Color = 'red' | 'green' | 'blue';
 
-const color: Color = 'blue';7
+const color: Color = 'blue';
+
+const values = {
+    color: 'green',
+} as const;
+
+type EventName = 'click' | 'change';
+
+type EventHandler = `on${EventName}`;
+
+type UserId = `user.id_${string}`;
+
+
+interface User2 {
+    username: string;
+}
+
+interface Article {
+    title: string;
+}
+
+interface ApiResponse2<T>{
+    status?: 'error' | 'success';
+    meta?: MediaMetadata;
+    requestId?: string;
+    data: T;
+}
+
+// const responseFromUserApi2: ApiResponse<User2> = {
+//     data: {
+//         username: 'Ulbi Tv'
+//     }
+// }
+
+
+
+
 
 
 
