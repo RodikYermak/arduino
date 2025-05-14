@@ -1,1 +1,30 @@
 Hello
+
+What is the command line?
+
+A user interface - also called "command-line interface" or CLI - that allows us to utilize the functions of our operating system
+
+Curriculum overview:
+    * The file tree
+    * Create & delete
+    * Write & read
+    * Copy, move & rename
+    * Search & replace
+    * Count & organize
+
+// Print working directory
+pwd
+
+// list
+ls
+
+// change directory
+cd
+
+// clear
+clear
+
+// moving one level up
+cd ../
+
+
