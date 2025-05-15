@@ -27,4 +27,39 @@ clear
 // moving one level up
 cd ../
 
+// Create files
+touch mountains.txt
+
+// Delete files
+rm mountains.txt
+
+// Use paths to create & delete elsewhere
+touch ../cities/biggest_cities.txt
+
+// Create directories
+mkdir cities
+
+// Delete empty directories
+rmdir cities
+
+// not empty directories
+rm -r cities
+
+// write to files
+echo 'Hello, world!'
+
+// redirect output
+echo 'Hello, world!' > hello.txt
+
+// to append and not overwrite, use the append redirection operator '>>'
+echo 'Welcome back!' >> hello.txt
+
+// read from files
+cat hello.txt
+
+// redirect output
+cat hello.txt > hello_copy.txt
+
+
+
 
