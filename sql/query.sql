@@ -68,8 +68,18 @@
 --     AND sold IS false;
 
 -- IN operator
-
-
+-- SELECT brand, model, price, sold FROM cars
+--     WHERE brand IN('Ford', 'Chevrolet', 'Ferrari')
+--     AND sold IS FALSE;
+-- SELECT brand, model, year, condition FROM cars
+--     WHERE condition >= 3
+--     AND year IN(1961, 1963, 1965, 1967, 1969)
+--     AND sold IS FALSE;
+SELECT brand, model, price, sold FROM cars
+	WHERE (
+		brand NOT IN ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+		OR price < 50000
+	) AND sold IS FALSE;
 
 
 -- Challenges 1
