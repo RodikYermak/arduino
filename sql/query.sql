@@ -75,14 +75,29 @@
 --     WHERE condition >= 3
 --     AND year IN(1961, 1963, 1965, 1967, 1969)
 --     AND sold IS FALSE;
-SELECT brand, model, price, sold FROM cars
-	WHERE (
-		brand NOT IN ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
-		OR price < 50000
-	) AND sold IS FALSE;
-
+-- SELECT brand, model, price, sold FROM cars
+-- 	WHERE (
+-- 		brand NOT IN ('Ford', 'Triumph', 'Chevrolet', 'Dodge')
+-- 		OR price < 50000
+-- 	) AND sold IS FALSE;
 
 -- Challenges 1
+/*
+	Select brand, model, and color from cars
+		where the color is 'red'
+		and the brand is not 'Ferrari'
+		and the car has not been sold
+*/
+
+SELECT brand, model, color FROM cars
+    WHERE color = 'red'
+    AND brand != 'Ferrari'
+    AND sold IS FALSE;
+
+
+
+
+
 -- ORDER BY
 -- LIMIT
 -- COUNT and SUM
