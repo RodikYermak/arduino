@@ -252,16 +252,27 @@
 		set the condition to 5
 		and the price to 465000
 */
-UPDATE cars SET
-    condition = 5, price = 465000
-WHERE id=14;
-
-
-
-
-
-
-
-
-
+-- UPDATE cars SET
+--     condition = 5, price = 465000
+-- WHERE id=14;
+/*
+	Set the condition to 1
+		and the price to $10,000
+	where the car's brand is Porsche
+		and sold is false
+*/
+-- UPDATE cars SET
+--     condition = 1, price = 10000
+-- WHERE brand = 'Porsche';
 -- DELETE
+/*
+	Delete from the cars table, any record where
+		condition is 0
+*/
+-- DELETE FROM cars
+--     WHERE condition = 0;
+/*
+	Delete any record from the cars table where sold is TRUE
+*/
+-- DELETE FROM cars
+--     WHERE sold IS TRUE;
