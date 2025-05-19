@@ -115,6 +115,7 @@
 --   OR (brand IN ('Ford', 'Triumph') AND year BETWEEN 1970 AND 1979))
 --   AND SOLD IS NOT TRUE;
 
+-- ORDER BY
 /*
 	Select the brand, model, condition and price from cars
 		order the table by condition in descending order
@@ -123,6 +124,8 @@
 -- SELECT brand, model, condition, price, sold FROM cars
 --     WHERE sold IS FALSE AND condition != 5
 --     ORDER BY condition DESC, price ASC;
+
+-- LIMIT
 /*
 	Select the brand, model, color and price from cars
 		where the color is a shade of 'red'
@@ -134,6 +137,8 @@
 --     WHERE color LIKE '%red%' AND sold IS FALSE
 --     ORDER BY price
 --     LIMIT 5;
+
+-- COUNT and SUM
 /*
 	Sum the price of cars
 		where sold is true
@@ -148,6 +153,7 @@
 -- SELECT FLOOR(AVG(price)) as avg_bentley_price FROM cars
 --     WHERE brand = 'Bentley';
 
+-- MAX, MIN, AVG
 /*
 	Select the average, minimum and maximum price from cars
 		where sold is true
@@ -159,6 +165,8 @@
 --     MAX(price)
 -- FROM cars
 -- WHERE sold IS TRUE;
+
+-- GROUP BY
 /*
 	Select the condition, and a count of the condition from cars
 		group by the condition column
@@ -179,6 +187,8 @@
 -- SELECT brand, COUNT(brand), FLOOR(AVG(price)) AS AVG FROM cars
 --     WHERE sold IS FALSE
 --     GROUP BY brand;
+
+-- HAVING
 /*
 	Select:
 		* year
@@ -198,18 +208,60 @@
 --     ORDER BY car_count
 
 
-
-
-
-
--- ORDER BY
--- LIMIT
--- COUNT and SUM
--- MAX, MIN, AVG
--- GROUP BY
--- HAVING
 -- Challenges 2
+/*
+	Select brand, model, and year from cars
+		only show the oldest 5 cars in the database
+		show cars which haven't been sold
+*/
+-- SELECT brand, model, year FROM cars
+--     WHERE sold IS FALSE
+--     ORDER BY year ASC
+--     LIMIT 5;
+/*
+	Select color and count how many cars have each color
+		find cars which have not been sold
+		order by count in descending order
+		only show results where the count is greater than 2
+*/
+-- SELECT color, COUNT(color) FROM cars
+--     WHERE sold IS FALSE
+--     GROUP BY color
+--     HAVING COUNT(color)>2
+--     ORDER BY count DESC
+
 -- Manipulating data
 -- INSERT INTO
+/*
+	Insert these two cars to the cars table:
+		1. Brand: Chevrolet, model: Bel Air, year: 1955,
+			retail_price: 50000, color: purple, condition 5, sold: false
+		2. Brand: Porsche, model: 944 Turbo, year: 1986,
+			retail_price: 48000, color: white, condition: 4, sold: false
+*/
+-- INSERT INTO cars (brand, model, year, price, color, condition, sold)
+--     VALUES ('Chevrolet', 'Bel Air', 1955, 50000, 'purple', 5, false),
+--     ('Porsche', '944 Turbo', 1986, 48000, 'white', 4, false);
 -- UPDATE
+-- UPDATE cars SET
+-- 	sold = TRUE
+-- WHERE brand = 'Ford'
+-- 	AND model = 'Escort RS2000';
+/*
+	Update the record for the Aston Martin DB4 with ID 14
+		set the condition to 5
+		and the price to 465000
+*/
+UPDATE cars SET
+    condition = 5, price = 465000
+WHERE id=14;
+
+
+
+
+
+
+
+
+
 -- DELETE
