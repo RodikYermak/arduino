@@ -115,6 +115,90 @@
 --   OR (brand IN ('Ford', 'Triumph') AND year BETWEEN 1970 AND 1979))
 --   AND SOLD IS NOT TRUE;
 
+/*
+	Select the brand, model, condition and price from cars
+		order the table by condition in descending order
+		and by price in ascending order
+*/
+-- SELECT brand, model, condition, price, sold FROM cars
+--     WHERE sold IS FALSE AND condition != 5
+--     ORDER BY condition DESC, price ASC;
+/*
+	Select the brand, model, color and price from cars
+		where the color is a shade of 'red'
+		and sold is false
+		order by price
+		limit the results to 5
+*/
+-- SELECT brand, model, color, price FROM cars
+--     WHERE color LIKE '%red%' AND sold IS FALSE
+--     ORDER BY price
+--     LIMIT 5;
+/*
+	Sum the price of cars
+		where sold is true
+	Use the alias total_earnings in your output
+*/
+-- SELECT SUM(price) AS total_earnings FROM cars
+--     WHERE sold IS TRUE;
+/*
+	Use the AVG aggregate function to find the average price
+		where the brand is Bentley
+*/
+-- SELECT FLOOR(AVG(price)) as avg_bentley_price FROM cars
+--     WHERE brand = 'Bentley';
+
+/*
+	Select the average, minimum and maximum price from cars
+		where sold is true
+	Round the average up to the nearest whole number
+		and use 'avg' as the alias for that result
+*/
+-- SELECT CEIL(AVG(price)) as avg,
+--     MIN(price),
+--     MAX(price)
+-- FROM cars
+-- WHERE sold IS TRUE;
+/*
+	Select the condition, and a count of the condition from cars
+		group by the condition column
+*/
+-- SELECT condition, COUNT(condition) FROM cars
+--     GROUP BY condition
+/*
+	Select:
+		* the brand
+		* a count of the brand
+		* and an average of the price for each brand
+		* round the average down to the nearest number
+		* alias the average as 'AVG' in your output
+	From cars where
+		the car has not been sold
+	Group the table by brand.
+*/
+-- SELECT brand, COUNT(brand), FLOOR(AVG(price)) AS AVG FROM cars
+--     WHERE sold IS FALSE
+--     GROUP BY brand;
+/*
+	Select:
+		* year
+		* a count of cars from that year, aliased as car_count
+		* the maximum price
+		* the minimum price
+	from the table cars
+		where the car has been sold
+	group by year
+		only show years where more than one car has been sold from that year
+	order the result by car_count
+*/
+-- SELECT year, COUNT(year) AS car_count, MAX(price), MIN(price) FROM cars
+--     WHERE sold IS TRUE
+--     GROUP BY year
+--     HAVING COUNT(year) > 1
+--     ORDER BY car_count
+
+
+
 
 
 
