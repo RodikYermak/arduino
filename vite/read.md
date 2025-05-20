@@ -13,9 +13,8 @@ Shant Dashjian
 Software Engineer and Leader
 2009 -> Now
 
-Teacher * Scrimba
+Teacher \* Scrimba
 2023 -> Now
 
-Mentor * Pro Coding Mentor
+Mentor \* Pro Coding Mentor
 2024 -> Now
-
