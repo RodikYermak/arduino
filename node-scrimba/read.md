@@ -64,3 +64,12 @@ Content-Types (Mime types)
     text/html
     text/css
     application/javascript
+
+Query parameneters
+sending key value pairs
+/api?name=tom&country=uk
+
+const queryParams = {
+    Name: 'tom',
+    country: 'uk'
+}
