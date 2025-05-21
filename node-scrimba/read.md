@@ -73,3 +73,16 @@ const queryParams = {
     Name: 'tom',
     country: 'uk'
 }
+
+SAME-ORIGIN POLICY
+By default, browsers enforce a same-origin policy. This means requests can only be made to the same protocol, domain, and port as the one serving the web page.
+
+Protocol        Domain          Port
+HTTP            scrimba.com     8000
+HTTPS           mozilla.org     3000
+
+Cross-origin resource sharing (CORS)
+
+No need to set CORS
+Server and Frontend
+http://scrimba.com:3000
