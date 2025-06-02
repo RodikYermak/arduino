@@ -22,7 +22,7 @@ export default function PrintForgeHomePage() {
                         </button>
                     </div>
                 </div>
-                <img src="/home_page_hero.png" width={350} />
+                <img src="/hero-image.png" width={350} />
             </section>
         </main>
     );
