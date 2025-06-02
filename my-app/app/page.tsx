@@ -1,3 +1,4 @@
+import Image from 'next/image';
 export default function PrintForgeHomePage() {
     return (
         <main>
@@ -7,7 +8,7 @@ export default function PrintForgeHomePage() {
                         Your go-to platform for 3D printing files
                     </p>
                     <h1 className="text-4xl font-bold md:text-5xl">
-                        Discover what's possible with 3D Printing
+                        Discover what&apos;s possible with 3D Printing
                     </h1>
                     <p className="text-lg text-gray-600">
                         Join our community of creators and explore a vast library of user-submitted
@@ -16,13 +17,14 @@ export default function PrintForgeHomePage() {
 
                     <div className="flex gap-4">
                         <button
-                            href="/3d-models"
+                            // href="/3d-models"
                             className="px-6 py-3 text-black transition duration-100 bg-white border-2 border-black hover:bg-black hover:text-white">
                             Browse Models
                         </button>
                     </div>
                 </div>
-                <img src="/hero-image.png" width={350} />
+                <Image src="/hero-image.png" width={350} height={350} alt="Home page hero image" />
+                {/* <img src="/hero-image.png" width={350} /> */}
             </section>
         </main>
     );
