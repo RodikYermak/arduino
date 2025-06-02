@@ -1,4 +1,4 @@
-// File: /Users/rodion.yermakov/DEV/next_scrimba/app/layout.tsx
+// File: /Users/rodion.yermakov/DEV/new_repo/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

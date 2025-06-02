@@ -1,4 +1,4 @@
-// File: /Users/rodion.yermakov/DEV/next_scrimba/app/page.js
+// File: /Users/rodion.yermakov/DEV/new_repo/app/page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
