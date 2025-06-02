@@ -1,1 +1,0 @@
-New Next Js course
