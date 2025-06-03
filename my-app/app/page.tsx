@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import HeroImage from '@/public/hero-image.png';
+
 export default function PrintForgeHomePage() {
     return (
         <main>
@@ -23,7 +25,7 @@ export default function PrintForgeHomePage() {
                         </button>
                     </div>
                 </div>
-                <Image src="/hero-image.png" width={350} height={350} alt="Home page hero image" />
+                <Image src={HeroImage} width={350} height={350} alt="Home page hero image" />
                 {/* <img src="/hero-image.png" width={350} /> */}
             </section>
         </main>
