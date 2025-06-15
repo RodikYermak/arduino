@@ -41,7 +41,7 @@ function completeOrder(orderId: number) {
     return order;
 }
 
-addNewPizza({ name: 'Chicken Bacon  Ranch', price: 12 });
+addNewPizza({ name: 'Chicken Bacon NEW COLOR Ranch', price: 12 });
 addNewPizza({ name: 'BBQ Chicken', price: 12 });
 addNewPizza({ name: 'Spicy Sausage', price: 11 });
 
