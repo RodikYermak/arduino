@@ -10,14 +10,14 @@ let nextOrderId = 1;
 const orderQueue = [];
 
 type pizzaObject = {
-    name: string,
-    price: number
-}
+    name: string;
+    price: number;
+};
 type orderType = {
-    id: number,
-    pizza: object,
-    status: string
-}
+    id: number;
+    pizza: object;
+    status: string;
+};
 
 function addNewPizza(pizzaObj: pizzaObject) {
     menu.push(pizzaObj);
@@ -36,7 +36,7 @@ function placeOrder(pizzaName: string) {
 }
 
 function completeOrder(orderId: number) {
-    const order:object = orderQueue.find((order) => order.id === orderId);
+    const order: object = orderQueue.find((order) => order.id === orderId);
     order.status = 'completed';
     return order;
 }
@@ -49,5 +49,5 @@ placeOrder('Chicken Bacon Ranch');
 completeOrder(1);
 
 console.log('Menu:', menu);
-console.log('Cash in register:', cashInRegister);
+console.log('Cash in red register:', cashInRegister);
 console.log('Order queue:', orderQueue);
